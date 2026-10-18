@@ -43,7 +43,7 @@ export function parseAmount(value: string) {
   const normalized = value.trim().replace(',', '.');
   if (!/^\d+(\.\d{1,2})?$/.test(normalized)) throw new Error('Enter an amount with at most two decimal places.');
   const amount = Number(normalized);
-  if (amount <= 0 || amount > 999999) throw new Error('Enter an amount between 0.01 and 999999.');
+  if (amount <= 0 || amount > 10000000) throw new Error('Enter an amount between 0.01 and 10000000.');
   return amount;
 }
 

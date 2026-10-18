@@ -12,7 +12,8 @@ test('release API addresses require HTTPS and cannot contain credentials or a pa
 test('mobile money input handles decimal keyboards and rejects fractional paisa', () => {
   assert.equal(parseAmount('12,50'), 12.5);
   assert.equal(parseAmount('0.01'), 0.01);
-  for (const value of ['0', '-1', '1.001', '1000000', '', '1e2', '1,234.50']) assert.throws(() => parseAmount(value));
+  assert.equal(parseAmount('10000000'), 10000000);
+  for (const value of ['0', '-1', '1.001', '10000000.01', '', '1e2', '1,234.50']) assert.throws(() => parseAmount(value));
 });
 test('native requests use bearer auth without browser cookies', async t => {
   t.mock.method(globalThis, 'fetch', async (url, options) => {

@@ -10,6 +10,7 @@ if (process.env.EAS_BUILD_PROFILE === 'production' && development) {
 }
 const config: ExpoConfig = {
   name: 'Gurrai', slug: 'gurrai-app', version: '1.0.0', scheme: 'gurrai',
+  extra: { eas: { projectId: 'bd47abf2-714e-42d5-a561-73f5a6200737' } },
   platforms: ['ios', 'android'], orientation: 'portrait', userInterfaceStyle: 'light',
   icon: './assets/gurrai-icon.png',
   ios: {
